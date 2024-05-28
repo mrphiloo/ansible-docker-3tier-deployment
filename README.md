@@ -18,6 +18,7 @@ In this project, I aimed to enhance deployment efficiency by automating a 3-tier
 
 ```bash
 ansible-galaxy collection install community.docker
+```
 
 ### 3. Install Docker and Start Docker Services
 - Create the `install_docker.yml` Ansible playbook:
@@ -25,6 +26,7 @@ ansible-galaxy collection install community.docker
 
 ```bash
 ansible-playbook install_docker.yml
+```
 
 ### 4. Launch the Web Server Container
 - Create the `web_server.yml` Ansible playbook:
@@ -32,6 +34,7 @@ ansible-playbook install_docker.yml
 
 ```bash
 ansible-playbook web_server.yml
+```
 
 ### 5. Setting Up MySQL and WordPress Containers
 - Create the `word_sql.yml` Ansible playbook:
@@ -39,6 +42,7 @@ ansible-playbook web_server.yml
 
 ```bash
 ansible-playbook word_sql.yml
+```
 
 ##Conclusion
 This project demonstrated the effectiveness of using Ansible and Docker to automate the deployment of a 3-tier architecture. By leveraging Ansible's automation capabilities and Docker's containerization benefits, we achieved a reproducible and scalable deployment environment, significantly reducing deployment time and increasing system reliability.
