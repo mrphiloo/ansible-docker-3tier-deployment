@@ -1,0 +1,15 @@
+---
+- name: Install and Start Docker
+  hosts: all
+  become: true
+  tasks:
+    - name: Install Docker
+      yum:
+        name: docker
+        state: present    # Install Docker using yum package manager
+
+    - name: Start Docker service
+      systemd:
+        name: docker
+        state: started
+        enabled: yes    # Ensure the Docker service is started and enabled on boot

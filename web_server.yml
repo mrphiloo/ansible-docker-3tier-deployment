@@ -1,0 +1,12 @@
+---
+- name: Create a container
+  hosts: all
+  become: true
+  tasks:
+    - name: Create Web Server container and Expose
+      community.docker.docker_container:
+        name: web_server
+        image: "vimal13/apache-webserver-php"
+        ports:
+          - "1234:80"
+        state: started   # This task creates and starts a web server container, exposing port 1234 to 80

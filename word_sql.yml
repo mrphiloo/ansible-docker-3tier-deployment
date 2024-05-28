@@ -1,0 +1,30 @@
+---
+- name: Create db container and connect to network
+  hosts: all
+  become: true
+  tasks:
+    - name: Create MySQL container
+      community.docker.docker_container:
+        name: db
+        image: "mysql"
+        env:
+          MYSQL_ROOT_PASSWORD: philo
+          MYSQL_DATABASE: test
+          MYSQL_USER: test1
+          MYSQL_PASSWORD: philo
+        state: started   # This task creates and starts a MySQL container with the specified environment variables
+
+    - name: Create WordPress container and connect to MySQL container
+      community.docker.docker_container:
+        name: wordpress
+        image: "wordpress"
+        env:
+          WORDPRESS_DB_HOST: db
+          WORDPRESS_DB_USER: test1
+          WORDPRESS_DB_PASSWORD: philo
+          WORDPRESS_DB_NAME: test
+        links:
+          - "db"
+        ports:
+          "8080:80"
+        state: started   # This task creates and starts a WordPress container linked to the MySQL container, exposing port 8080 to 80
