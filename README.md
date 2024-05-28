@@ -44,9 +44,9 @@ ansible-playbook web_server.yml
 ansible-playbook word_sql.yml
 ```
 
-##Conclusion
+## Conclusion
 This project demonstrated the effectiveness of using Ansible and Docker to automate the deployment of a 3-tier architecture. By leveraging Ansible's automation capabilities and Docker's containerization benefits, we achieved a reproducible and scalable deployment environment, significantly reducing deployment time and increasing system reliability.
 
-##Contact
+## Contact
 If anything is not working or needs changes, connect with me on [LinkedIn](https://www.linkedin.com/in/mrphiloo/).
 
